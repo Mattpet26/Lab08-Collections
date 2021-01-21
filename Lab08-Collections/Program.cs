@@ -99,43 +99,50 @@ namespace Lab08_Collections
                         break;
 
                     case "3":
-                        Console.WriteLine("Please enter the title of the book you would like to borrow:");
-                        string bookBorrowed = Console.ReadLine();
+                        int count = 0;
+                        Console.WriteLine("Please enter the number of the book to borrow:");
 
-                        foreach (Book books in library)
+                        foreach (Book libbooks in library)
                         {
-                            if (books.Title == bookBorrowed)
+                            Console.WriteLine($"{count++}. {libbooks.Title}");
+                        }
+                        int bookBorrowed = Convert.ToInt32(Console.ReadLine());
+
+                        for (int i = 0; i < library.count(); i++)
+                        {
+                            if (i == bookBorrowed)
                             {
-                                bookBag.Add(books);
-                                //library.remove(books);
+                                Book bookreturned = library.GetArray()[bookBorrowed];
+                                bookBag.Add(bookreturned);
+                                //this removes the index of which the book is located at.
+                                library.remove(bookBorrowed);
                             }
                         }
                         break;
 
                     case "4":
-                        Console.WriteLine("Please enter the title of the book you would like to return:");
-                        string bookReturned = Console.ReadLine();
-                        foreach (Book books in bookBag)
+                        Console.WriteLine("Please enter which number of the book you would like to return:");
+                        int counter = 1;
+                        Dictionary<int, Book> mystuff = new Dictionary<int, Book>();
+
+                        foreach (var books in bookBag)
                         {
-                            if (books.Title == bookReturned)
-                            {
-                                library.add(books);
-                                bookBag.Remove(books);
-                            }
+                            mystuff.Add(counter, books);
+                            Console.WriteLine($"{counter}. {books.Title}");
                         }
-                        // we cannot convert user input into a book, so we must find the book index and see if it matches user input
 
-                        // this is the literal opposite of case3
+                        int bookReturned = Convert.ToInt32(Console.ReadLine());
+                        mystuff.TryGetValue(bookReturned, out Book returnedbook);
+                        bookBag.Remove(returnedbook);
+                        library.add(returnedbook);
 
-                        // remove the book from our bookbag. Dictionary will probably work fine.
-                        // add the book to our library.
                         break;
 
                     case "5":
                         Console.WriteLine("Here is your current bookbag:");
                         foreach (Book books in bookBag)
                         {
-                            Console.WriteLine(books.Title);
+                            Console.WriteLine($"Title: {books.Title}, By: {books.author.firstName}, Genre: {books.bookgenre}");
                         }
                         break;
 
@@ -143,10 +150,6 @@ namespace Lab08_Collections
 
                         break;
                 }
-                //borrowBook();
-                //returnBook();
-                //viewBag();
-                //exit();
             }
         }
 
