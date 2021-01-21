@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab08_Collections.Classes
 {
-    class Book
+    public class Book
     {
         public string Title { get; set; }
         public Author author { get; set; }

@@ -13,20 +13,6 @@ namespace Lab08_Collections
 
             LoadBooks(library);
             UserInterface(library, bookBag);
-
-            //Classes.DayOfWeek dow= Classes.DayOfWeek.Friday;
-
-            //Console.WriteLine($"Today is {dow}");
-            //Console.WriteLine($"Todays number is {(int)dow}");
-            //Console.WriteLine($"Convert to Day of Week {(Classes.DayOfWeek)42}");
-
-            //Date date = new Date();
-            //date.DayOfMonth = 15;
-            //date.DayOfWeek = Classes.DayOfWeek.Monday;
-
-            //listExamples();
-            //dictionaryExample();
-            //customCollection();
         }
 
         public static void LoadBooks(Library<Book> library)
@@ -152,75 +138,5 @@ namespace Lab08_Collections
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //static void listExamples()
-        //{
-        //    List<string> family = new List<string>();
-        //    family.Add("jack");
-        //    family.Add("jill");
-
-        //    Console.WriteLine("Heres the fam: ");
-        //    foreach(string person in family)
-        //    {
-        //        Console.Write($"{person}, ");
-        //    }
-        //        Console.WriteLine(" ");
-        //}
-        //static void dictionaryExample()
-        //{
-        //    Dictionary<int, string> mydictionary = new Dictionary<int, string>();
-        //    mydictionary.Add(1, "Slayer");
-        //    mydictionary.Add(4, "Wu-Tang");
-
-        //    mydictionary.TryGetValue(1, out string band);
-        //    Console.WriteLine(band);
-
-        //    foreach (KeyValuePair<int, string> theband in mydictionary)
-        //    {
-        //        Console.WriteLine("Key: {0}, Value: {1}", theband.Key, theband.Value);
-        //    }
-
-
-        //    Dictionary<string, int> mystuff = new Dictionary<string, int>();
-        //    mystuff.Add("doomGuy", 666);
-        //    Console.WriteLine(mystuff["doomGuy"]);
-        //}
-
-        //static void customCollection()
-        //{
-        //    Library<int> numbers = new Library<int>();
-        //    numbers.add(1);
-        //    numbers.add(2);
-        //    numbers.add(3);
-
-        //    foreach(int number in numbers)
-        //    {
-        //        Console.WriteLine(number);
-        //    }
-
-        //    Library<int> ages = new Library<int>();
-        //    ages.add(11);
-        //    ages.add(22);
-        //    ages.add(33);
-        //    ages.add(44);
-
-        //}
     }
 }
