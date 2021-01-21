@@ -6,7 +6,7 @@ using System.Text;
 namespace Lab08_Collections.Classes
 {
     // write a method to remove books from the library
-    class Library<T> : IEnumerable<T>
+    public class Library<T> : IEnumerable<T>
     {
         private T[] items = new T[5];
         private int counter;
